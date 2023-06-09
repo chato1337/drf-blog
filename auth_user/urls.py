@@ -7,7 +7,7 @@ router = DefaultRouter()
 
 router.register(r'profile', ProfielViewSet)
 router.register(r'role', RoleViewSet)
-router.register(r'', UserViewSet)
+router.register(r'user', UserViewSet)
 
 urls = [
     path('token/', DecoratedTokenObtainPairView.as_view(), name='token_obtain_pair'),

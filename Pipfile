@@ -10,6 +10,7 @@ djangorestframework-simplejwt = "*"
 drf-yasg = "*"
 django-cors-headers = "*"
 django-filter = "*"
+faker = "*"
 
 [dev-packages]
 
