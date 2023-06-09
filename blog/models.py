@@ -1,6 +1,6 @@
 from django.db import models
 
-from auth_user.models import User, Profile
+from auth_user.models import Profile
 
 # Create your models here.
 class Post(models.Model):
