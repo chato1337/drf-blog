@@ -8,7 +8,7 @@ class UserFactory:
             'email': 'me@me.com',
             'password': 'asd123.'
         }
-    
+
     def build_profile_JSON(self):
         user = self.create_user()
         return {
@@ -16,7 +16,7 @@ class UserFactory:
             "image": "string",
             "user": 1
         }
-    
+
     def build_role_JSON(self):
         user = self.create_user()
         return {
@@ -26,7 +26,7 @@ class UserFactory:
 
     def create_user(self):
         return User.objects.create(**self.build_user_JSON())
-    
+
     def create_profile(self):
         profile_dict = self.build_profile_JSON()
         user = User.objects.get(pk=profile_dict['user'])
