@@ -1,4 +1,10 @@
 
+### Try Out
+
+
+## Docs swagger:
+- https://chatuz.site/swagger/
+
 ## About
 This code repository contains the source code for a robust blogging platform API built using Django, a powerful Python web framework, and PostgreSQL, a reliable open-source relational database management system. The repository offers a comprehensive set of features for creating, managing, and interacting with blog content through RESTful endpoints. Additionally, the repository includes a suite of tests to ensure the stability and reliability of the API.
 

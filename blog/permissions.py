@@ -5,7 +5,7 @@ class CanAccessByRole(permissions.BasePermission):
     def has_permission(self, request, view):
         # import pdb; pdb.set_trace()
         #if is guest or get content
-        if request.user.is_anonymous() or request.method == 'GET':
+        if request.user.is_anonymous or request.method == 'GET':
             return True
 
         role = self.get_role(request.user)
