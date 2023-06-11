@@ -1,6 +1,8 @@
 
 ### Try Out
-
+- https://chatuz.site/
+user: `ownertest`
+pass: `test123`
 
 ## Docs swagger:
 - https://chatuz.site/swagger/
