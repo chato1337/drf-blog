@@ -10,14 +10,15 @@ class PostFactory:
         return {
             'content': 'post test',
             'subject': 'subject test',
-            'author': 1
+            'author': profile.pk
         }
     def build_comment_JSON(self):
         post = self.create_post()
+        profile = UserFactory().create_profile()
         return {
             "content": "string",
-            "author": 1,
-            "post": 1,
+            "author": profile.pk,
+            "post": post.pk,
             "likes": []
         }
 
@@ -25,7 +26,7 @@ class PostFactory:
         post = self.create_post()
         return {
             "name": "my_tag",
-            "posts": [1]
+            "posts": [post.pk]
         }
 
     def create_post(self):

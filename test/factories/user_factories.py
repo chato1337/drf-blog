@@ -1,10 +1,13 @@
 from django.contrib.auth.models import User
 from auth_user.models import Profile
+from faker import Faker
 
 class UserFactory:
     def build_user_JSON(self):
+        faker = Faker()
+        name = faker.profile()['username']
         return {
-            'username': 'test_user',
+            'username': name,
             'email': 'me@me.com',
             'password': 'asd123.'
         }
@@ -14,14 +17,14 @@ class UserFactory:
         return {
             "bio": "string",
             "image": "string",
-            "user": 1
+            "user": user.pk
         }
 
     def build_role_JSON(self):
         user = self.create_user()
         return {
             'name': 'role test',
-            'user': [1]
+            'user': [user.pk]
         }
 
     def create_user(self):

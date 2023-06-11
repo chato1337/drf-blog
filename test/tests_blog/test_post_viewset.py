@@ -56,9 +56,8 @@ class TagTestCase(TestSetUp):
 
 
 class LikeTestCase(TestSetUp):
-    url = '/blog/like/1/'
+    url = '/blog/like/'
     def test_like_comment(self):
-        # import pdb; pdb.set_trace()
         comment = PostFactory().create_comment()
-        response = self.client.put(self.url, {"profile": 1}, format='json')
+        response = self.client.put(self.url + str(comment.pk) + '/', {"profile": comment.author.pk}, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)

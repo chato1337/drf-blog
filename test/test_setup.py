@@ -12,7 +12,7 @@ class TestSetUp(APITestCase):
         self.user = User.objects.create_superuser(
             first_name='test_name',
             last_name='testname',
-            username='testname',
+            username=faker.name(),
             password=self.my_password,
             email=faker.email()
         )
@@ -28,8 +28,7 @@ class TestSetUp(APITestCase):
             format='json'
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        # import pdb; pdb.set_trace()
 
         self.token = response.data['access']
-        self.client.credentials(HTTP_AUTORIZATION='Bearer ' + self.token)
+        self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + self.token)
         return super().setUp()

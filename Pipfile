@@ -11,6 +11,8 @@ drf-yasg = "*"
 django-cors-headers = "*"
 django-filter = "*"
 faker = "*"
+django-environ = "*"
+psycopg2 = "*"
 
 [dev-packages]
 

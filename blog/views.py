@@ -27,11 +27,12 @@ class LikeViewSet(viewsets.GenericViewSet):
     queryset = CommentSerialzer.Meta.model.objects.all()
 
     def update(self, request, pk=None):
+        
         try:
             comment = Comment.objects.get(pk=pk)
             profile = Profile.objects.get(pk=request.data['profile'])
             comment.likes.add(profile)
         except ObjectDoesNotExist:
-            return Response({'success': 'failed liked comment'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'failed liked comment'}, status=status.HTTP_400_BAD_REQUEST)
 
         return Response({'success': 'liked comment!'}, status=status.HTTP_200_OK)
