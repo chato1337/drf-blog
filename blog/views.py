@@ -6,9 +6,11 @@ from blog.models import Comment
 from blog.serializers import CommentSerialzer, PostSerializer, TagSerializer
 from django_filters import rest_framework as filters
 from django.core.exceptions import ObjectDoesNotExist
+from blog.permissions import CanAccessByRole
 
 # Create your views here.
 class PostViewSet(viewsets.ModelViewSet):
+    permission_classes = [CanAccessByRole]
     filter_backends = (filters.DjangoFilterBackend,)
     serializer_class = PostSerializer
     filterset_fields = ('subject', 'author')

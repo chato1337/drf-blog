@@ -5,7 +5,7 @@ from auth_user.serializers import ProfileSerializer, RoleSerializer, UserSeriali
 
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     serializer_class = UserSerializer
     queryset = UserSerializer.Meta.model.objects.all()
 
